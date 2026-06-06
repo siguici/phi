@@ -182,6 +182,6 @@ fn (mut this Eval) eval_type(e ast.Expr) !Type {
 	}
 }
 
-fn (this Eval) eval_empty(node ast.EmptyNode) {
-	// TODO
+fn (this Eval) eval_empty(node ast.EmptyNode) string {
+	return u8(node).str()
 }

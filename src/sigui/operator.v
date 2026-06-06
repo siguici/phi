@@ -1,4 +1,4 @@
-module ske
+module sigui
 
 struct OperatorInfo {
 	prec  int    = -1     // precedence

@@ -1,11 +1,11 @@
-module ske
+module sigui
 
 import os
 import json
 import net.http
 
 const version = '0.1.0'
-const repo = 'siguici/ske'
+const repo = 'siguici/siguilang'
 
 struct ReleaseAsset {
 	name                 string
@@ -56,10 +56,10 @@ pub fn self_update() {
 			return
 		}
 	}
-	asset_name := 'ske-${os_name}-${arch}' + if os_name == 'windows' { '.exe' } else { '' }
+	asset_name := 'sigui-${os_name}-${arch}' + if os_name == 'windows' { '.exe' } else { '' }
 	*/
 	arch := ''
-	asset_name := 'ske-${os_name}' + if os_name == 'windows' { '.exe' } else { '' }
+	asset_name := 'sigui-${os_name}' + if os_name == 'windows' { '.exe' } else { '' }
 
 	mut download_url := ''
 	for a in release.assets {
@@ -92,14 +92,14 @@ pub fn self_update() {
 }
 
 pub fn self_upgrade() {
-	println('🔄 Full Ske upgrade...')
+	println('🔄 Full SiguiLang upgrade...')
 
 	self_update()
 
-	// TODO: update all Ske modules/dependencies
-	println('⬆️ Updating Ske modules...')
-	// os.system("ske modules upgrade")
-	// os.system("ske templates update")
+	// TODO: update all SiguiLang modules/dependencies
+	println('⬆️ Updating SiguiLang modules...')
+	// os.system("sigui modules upgrade")
+	// os.system("sigui templates update")
 
 	println('✅ Global upgrade terminated.')
 }

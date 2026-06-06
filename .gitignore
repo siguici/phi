@@ -1,5 +1,6 @@
 # Binaries for programs and plugins
-/ske
+/siguilang
+/sigui
 /main
 *.zip
 *.zip.sha256
@@ -21,6 +22,6 @@ bin/
 # ENV
 .env
 
-# vweb and database
+# veb and database
 *.db
 *.js

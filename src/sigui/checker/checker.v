@@ -1,6 +1,6 @@
 module checker
 
-import ske.ast
+import sigui.ast
 
 pub fn check(node ast.Node) bool {
 	return true

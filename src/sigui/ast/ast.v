@@ -1,6 +1,6 @@
 module ast
 
-import ske.core { Span }
+import sigui.core { Span }
 
 pub const empty_node = Node(EmptyNode(0))
 

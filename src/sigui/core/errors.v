@@ -7,7 +7,7 @@ pub:
 	span Span
 }
 
-struct SkeError {
+struct SiguiError {
 	Error
 	type string @[required]
 	msg  string
@@ -15,8 +15,8 @@ struct SkeError {
 	pos  Position
 }
 
-fn ske_error(type string, msg string, opts ErrorOptions) SkeError {
-	return SkeError{
+fn sigui_error(type string, msg string, opts ErrorOptions) SiguiError {
+	return SiguiError{
 		type: type
 		msg:  msg
 		pos:  opts.pos
@@ -24,20 +24,20 @@ fn ske_error(type string, msg string, opts ErrorOptions) SkeError {
 	}
 }
 
-pub fn scanner_error(msg string, pos Position) SkeError {
-	return ske_error('scanner', msg, pos: pos)
+pub fn scanner_error(msg string, pos Position) SiguiError {
+	return sigui_error('scanner', msg, pos: pos)
 }
 
-pub fn parser_error(msg string, span Span) SkeError {
-	return ske_error('parser', msg, span: span)
+pub fn parser_error(msg string, span Span) SiguiError {
+	return sigui_error('parser', msg, span: span)
 }
 
-pub fn runtime_error(msg string, opts ErrorOptions) SkeError {
-	return ske_error('runtime', msg, opts)
+pub fn runtime_error(msg string, opts ErrorOptions) SiguiError {
+	return sigui_error('runtime', msg, opts)
 }
 
-pub fn (e SkeError) msg() string {
-	mut msg := 'Ske ${e.type} error: ${e.msg}'
+pub fn (e SiguiError) msg() string {
+	mut msg := 'Sigui ${e.type} error: ${e.msg}'
 	mut span := e.span
 
 	if span.is_empty() {

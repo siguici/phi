@@ -1,4 +1,4 @@
-module ske
+module sigui
 
 import term
 import regex

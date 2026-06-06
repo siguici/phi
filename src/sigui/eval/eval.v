@@ -1,8 +1,8 @@
 module eval
 
-import ske.ast
-import ske.core { Span, runtime_error }
-import ske.checker { is_bool, is_float, is_int }
+import sigui.ast
+import sigui.core { Span, runtime_error }
+import sigui.checker { is_bool, is_float, is_int }
 
 pub struct Var {
 pub mut:

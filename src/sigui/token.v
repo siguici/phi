@@ -1,6 +1,6 @@
-module ske
+module sigui
 
-import ske.core { Position }
+import sigui.core { Position }
 
 pub enum TokenType {
 	amp        // &

@@ -1,9 +1,9 @@
-module ske
+module sigui
 
 import os
 import sync
-import ske.ast { Node }
-import ske.eval
+import sigui.ast { Node }
+import sigui.eval
 
 @[params]
 pub struct RuntimeOptions {
@@ -49,8 +49,8 @@ pub fn (r Runtime) eval() ! {
 
 pub fn run(code string, options RuntimeOptions) ! {
 	mut path := code
-	if !os.exists(path) && !path.ends_with('.ske') {
-		path += '.ske'
+	if !os.exists(path) && !path.ends_with('.sigui') {
+		path += '.sigui'
 	}
 
 	if os.exists(path) {

@@ -1,7 +1,7 @@
-module ske
+module sigui
 
-import ske.core { Position, Span, parser_error }
-import ske.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
+import sigui.core { Position, Span, parser_error }
+import sigui.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
 
 pub fn parse(tokens []Token) ![]Node {
 	mut p := new_parser(tokens)

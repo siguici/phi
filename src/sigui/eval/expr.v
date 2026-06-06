@@ -2,8 +2,8 @@ module eval
 
 import math
 import os
-import ske.ast
-import ske.core { Span, runtime_error }
+import sigui.ast
+import sigui.core { Span, runtime_error }
 
 fn (mut this Eval) eval_expr(e ast.Expr) !Value {
 	return match e {

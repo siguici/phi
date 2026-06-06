@@ -1,10 +1,10 @@
-# ⚡ The **Ske** Programming Language
+# ⚡ The **Sigui** Programming Language
 
-**Ske** is a modern, high-performance programming language
+**SiguiLang** is a modern, high-performance programming language
 designed for simplicity, clarity, and expressive power.  
 Built with ❤️ in [Vlang](https://vlang.io).
 
-[![Build Status](https://github.com/siguici/ske/workflows/CI/badge.svg)](https://github.com/siguici/ske/actions)
+[![Build Status](https://github.com/siguici/siguilang/workflows/CI/badge.svg)](https://github.com/siguici/siguilang/actions)
 
 ---
 
@@ -13,7 +13,7 @@ Built with ❤️ in [Vlang](https://vlang.io).
 - ✅ Lightweight and fast by design  
 - ✅ Optional, strong, or dynamic typing  
 - ✅ Clean and minimal syntax  
-- ✅ `.ske` source files  
+- ✅ `.sigui` source files  
 - ✅ Web and general-purpose scripting  
 - ✅ Built-in HTTP server  
 - ✅ Native routing, templating, and middleware  
@@ -22,7 +22,7 @@ Built with ❤️ in [Vlang](https://vlang.io).
 
 ## 🌟 Vision
 
-**Ske** redefines how code feels to write and read —
+**SiguiLang** redefines how code feels to write and read —
 expressive, concise, and powerful.  
 Its architecture is designed for **multi-runtime execution**,
 paving the way for native support in environments like TypeScript, PHP, and Vlang.
@@ -34,24 +34,24 @@ paving the way for native support in environments like TypeScript, PHP, and Vlan
 > ⚠️ **Requires [Vlang](https://vlang.io)**
 
 ```bash
-git clone https://github.com/siguici/ske
-cd ske
-v .
-./ske examples
+git clone https://github.com/siguici/siguilang
+cd siguilang
+v src -o sigui
+./sigui examples
 ````
 
 Or build for production:
 
 ```bash
-v -prod .
-./ske examples
+v -prod src -o sigui
+./sigui examples
 ```
 
 ## 🧪 Quick Start
 
-Create a file `hello.ske`:
+Create a file `hello.sigui`:
 
-```ske
+```sigui
 string name = scan 'Enter your name: '
 if name {
   print 'Hello ', name, '!'
@@ -63,16 +63,16 @@ if name {
 Then run it:
 
 ```bash
-./ske run hello
+./sigui run hello
 ```
 
 ---
 
 ## 📄 Language Overview
 
-**Ske** combines clarity and expressiveness in a clean syntax:
+**SiguiLang** combines clarity and expressiveness in a clean syntax:
 
-```ske
+```sigui
 string hello(string name) {
     return 'Hello ', name, '!'
 }
@@ -85,7 +85,7 @@ print hello("World")
 - `print`, `echo`
 - Functions, conditionals, and loops
 - Optional `$` variable prefix
-- Inline templates (HTML + Ske)
+- Inline templates (HTML + SiguiLang)
 - Optional and strong typing
 - Built-in access to HTTP and environment data
 
@@ -107,7 +107,7 @@ print hello("World")
 
 ## 🧠 Philosophy
 
-**Ske** is about writing **natural, structured, and elegant code**.
+**SiguiLang** is about writing **natural, structured, and elegant code**.
 
 - No tags
 - No semicolons
@@ -125,7 +125,7 @@ We welcome contributions and ideas!
 
 - 🛠 Fork this repo
 - 🔧 Make improvements
-- ✅ Test (`v run .`)
+- ✅ Test (`v test .`)
 - 📬 Open a pull request
 
 ---

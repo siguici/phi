@@ -1,7 +1,7 @@
-module ske
+module sigui
 
 import strings.textscanner
-import ske.core { Position, scanner_error }
+import sigui.core { Position, scanner_error }
 
 @[params]
 pub struct ScannerOptions {

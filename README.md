@@ -1,10 +1,10 @@
-# ⚡ The **Sigui** Programming Language
+# Phi <a href="https://phici.github.io/phi" title="Phi"><img src="https://github.com/phici/art/blob/HEAD/phi-logo.svg?raw=true" alt="φ" height="24"/></a>
 
-**SiguiLang** is a modern, high-performance programming language
+**Phi** is a modern, high-performance programming language
 designed for simplicity, clarity, and expressive power.  
 Built with ❤️ in [Vlang](https://vlang.io).
 
-[![Build Status](https://github.com/siguici/siguilang/workflows/CI/badge.svg)](https://github.com/siguici/siguilang/actions)
+[![Build Status](https://github.com/phici/philang/workflows/CI/badge.svg)](https://github.com/phici/philang/actions)
 
 ---
 
@@ -13,7 +13,7 @@ Built with ❤️ in [Vlang](https://vlang.io).
 - ✅ Lightweight and fast by design  
 - ✅ Optional, strong, or dynamic typing  
 - ✅ Clean and minimal syntax  
-- ✅ `.sigui` source files  
+- ✅ `.phi` source files  
 - ✅ Web and general-purpose scripting  
 - ✅ Built-in HTTP server  
 - ✅ Native routing, templating, and middleware  
@@ -22,7 +22,7 @@ Built with ❤️ in [Vlang](https://vlang.io).
 
 ## 🌟 Vision
 
-**SiguiLang** redefines how code feels to write and read —
+**Phi** redefines how code feels to write and read —
 expressive, concise, and powerful.  
 Its architecture is designed for **multi-runtime execution**,
 paving the way for native support in environments like TypeScript, PHP, and Vlang.
@@ -34,24 +34,24 @@ paving the way for native support in environments like TypeScript, PHP, and Vlan
 > ⚠️ **Requires [Vlang](https://vlang.io)**
 
 ```bash
-git clone https://github.com/siguici/siguilang
-cd siguilang
-v src -o sigui
-./sigui examples
+git clone https://github.com/phici/philang
+cd philang
+v src -o phi
+./phi examples
 ````
 
 Or build for production:
 
 ```bash
-v -prod src -o sigui
-./sigui examples
+v -prod src -o phi
+./phi examples
 ```
 
 ## 🧪 Quick Start
 
-Create a file `hello.sigui`:
+Create a file `hello.phi`:
 
-```sigui
+```phi
 string name = scan 'Enter your name: '
 if name {
   print 'Hello ', name, '!'
@@ -63,16 +63,16 @@ if name {
 Then run it:
 
 ```bash
-./sigui run hello
+./phi run hello
 ```
 
 ---
 
 ## 📄 Language Overview
 
-**SiguiLang** combines clarity and expressiveness in a clean syntax:
+**Phi** combines clarity and expressiveness in a clean syntax:
 
-```sigui
+```phi
 string hello(string name) {
     return 'Hello ', name, '!'
 }
@@ -85,7 +85,7 @@ print hello("World")
 - `print`, `echo`
 - Functions, conditionals, and loops
 - Optional `$` variable prefix
-- Inline templates (HTML + SiguiLang)
+- Inline templates (HTML + Phi)
 - Optional and strong typing
 - Built-in access to HTTP and environment data
 
@@ -107,7 +107,7 @@ print hello("World")
 
 ## 🧠 Philosophy
 
-**SiguiLang** is about writing **natural, structured, and elegant code**.
+**Phi** is about writing **natural, structured, and elegant code**.
 
 - No tags
 - No semicolons
@@ -132,4 +132,4 @@ We welcome contributions and ideas!
 
 ## 📜 License
 
-[MIT](./LICENSE.md) © [Sigui Kessé Emmanuel](https://github.com/siguici)
+[MIT](./LICENSE.md) © [Sigui Kessé Emmanuel](https://github.com/phici)

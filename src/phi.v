@@ -3,7 +3,7 @@ module main
 import cli
 import os
 import v.vmod
-import sigui
+import phi
 
 const manifest = vmod.decode(@VMOD_FILE) or { panic(err) }
 
@@ -41,20 +41,20 @@ pub fn Program.new() &Program {
 			cli.Command{
 				name:        'release'
 				description: 'Re-build Ske'
-				usage:       'sigui release'
+				usage:       'phi release'
 				execute:     fn (cmd cli.Command) ! {
 					args := cmd.args
 					if args.len >= 1 {
 						eprintln('❌ Unknown command : ${args[0]}')
 						exit(1)
 					}
-					sigui.do_release()
+					phi.do_release()
 				}
 			},
 			cli.Command{
 				name:        'up'
 				description: 'Upgrade the Ske CLI'
-				usage:       'sigui up [-version]'
+				usage:       'phi up [-version]'
 				flags:       [
 					cli.Flag{
 						flag:        .string
@@ -71,36 +71,36 @@ pub fn Program.new() &Program {
 					}
 					if version := cmd.flags.get_string('version') {
 						if version != '' {
-							sigui.self_upgrade_to(version)
+							phi.self_upgrade_to(version)
 							return
 						}
 					}
-					sigui.self_upgrade()
+					phi.self_upgrade()
 				}
 			},
 		]
 		execute:     fn (cmd cli.Command) ! {
 			if code := cmd.flags.get_string('eval') {
 				if code != '' {
-					sigui.run_code(code, file: os.args[0], dir: os.getwd()) or { panic(err) }
+					phi.run_code(code, file: os.args[0], dir: os.getwd()) or { panic(err) }
 					return
 				}
 			}
 
-			if cmd.flags.get_bool('repl') or { false } && sigui.run_repl() {
+			if cmd.flags.get_bool('repl') or { false } && phi.run_repl() {
 				return
 			}
 
 			if cmd.args.len > 0 {
 				if cmd.flags.get_bool('conc') or { false } {
-					sigui.run_many_concurrently(cmd.args, dir: os.getwd()) or { panic(err) }
+					phi.run_many_concurrently(cmd.args, dir: os.getwd()) or { panic(err) }
 				} else {
-					sigui.run_many(cmd.args, dir: os.getwd()) or { panic(err) }
+					phi.run_many(cmd.args, dir: os.getwd()) or { panic(err) }
 				}
 				return
 			}
 
-			if !sigui.run_repl() {
+			if !phi.run_repl() {
 				h := cmd.help_message()
 				println(h)
 				exit(0)

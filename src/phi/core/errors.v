@@ -7,7 +7,7 @@ pub:
 	span Span
 }
 
-struct SiguiError {
+struct PhiError {
 	Error
 	type string @[required]
 	msg  string
@@ -15,8 +15,8 @@ struct SiguiError {
 	pos  Position
 }
 
-fn sigui_error(type string, msg string, opts ErrorOptions) SiguiError {
-	return SiguiError{
+fn phi_error(type string, msg string, opts ErrorOptions) PhiError {
+	return PhiError{
 		type: type
 		msg:  msg
 		pos:  opts.pos
@@ -24,20 +24,20 @@ fn sigui_error(type string, msg string, opts ErrorOptions) SiguiError {
 	}
 }
 
-pub fn scanner_error(msg string, pos Position) SiguiError {
-	return sigui_error('scanner', msg, pos: pos)
+pub fn scanner_error(msg string, pos Position) PhiError {
+	return phi_error('scanner', msg, pos: pos)
 }
 
-pub fn parser_error(msg string, span Span) SiguiError {
-	return sigui_error('parser', msg, span: span)
+pub fn parser_error(msg string, span Span) PhiError {
+	return phi_error('parser', msg, span: span)
 }
 
-pub fn runtime_error(msg string, opts ErrorOptions) SiguiError {
-	return sigui_error('runtime', msg, opts)
+pub fn runtime_error(msg string, opts ErrorOptions) PhiError {
+	return phi_error('runtime', msg, opts)
 }
 
-pub fn (e SiguiError) msg() string {
-	mut msg := 'Sigui ${e.type} error: ${e.msg}'
+pub fn (e PhiError) msg() string {
+	mut msg := 'Phi ${e.type} error: ${e.msg}'
 	mut span := e.span
 
 	if span.is_empty() {

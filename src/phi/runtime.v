@@ -1,9 +1,9 @@
-module sigui
+module phi
 
 import os
 import sync
-import sigui.ast { Node }
-import sigui.eval
+import phi.ast { Node }
+import phi.eval
 
 @[params]
 pub struct RuntimeOptions {
@@ -49,8 +49,8 @@ pub fn (r Runtime) eval() ! {
 
 pub fn run(code string, options RuntimeOptions) ! {
 	mut path := code
-	if !os.exists(path) && !path.ends_with('.sigui') {
-		path += '.sigui'
+	if !os.exists(path) && !path.ends_with('.phi') {
+		path += '.phi'
 	}
 
 	if os.exists(path) {

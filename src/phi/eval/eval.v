@@ -1,8 +1,8 @@
 module eval
 
-import sigui.ast
-import sigui.core { Span, runtime_error }
-import sigui.checker { is_bool, is_float, is_int }
+import phi.ast
+import phi.core { Span, runtime_error }
+import phi.checker { is_bool, is_float, is_int }
 
 pub struct Var {
 pub mut:

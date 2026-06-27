@@ -1,4 +1,4 @@
-module sigui
+module phi
 
 struct OperatorInfo {
 	prec  int    = -1     // precedence

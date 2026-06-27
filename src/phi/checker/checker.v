@@ -1,6 +1,6 @@
 module checker
 
-import sigui.ast
+import phi.ast
 
 pub fn check(node ast.Node) bool {
 	return true

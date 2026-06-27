@@ -1,7 +1,7 @@
-module sigui
+module phi
 
-import sigui.core { Position, Span, parser_error }
-import sigui.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
+import phi.core { Position, Span, parser_error }
+import phi.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
 
 pub fn parse(tokens []Token) ![]Node {
 	mut p := new_parser(tokens)
@@ -242,11 +242,13 @@ fn (this Parser) position() Position {
 }
 
 fn (mut this Parser) expect(type TokenType) !Token {
-	return this.eat_or_fail(type, '${token_to_str(type)} expected but ${this.current().val} provided')!
+	return this.eat_or_fail(type,
+		'${token_to_str(type)} expected but ${this.current().val} provided')!
 }
 
 fn (mut this Parser) expect_any(types []TokenType) !Token {
-	return this.eat_any_or_fail(types, '${tokens_to_str(types)} expected but ${this.current().val} provided')!
+	return this.eat_any_or_fail(types,
+		'${tokens_to_str(types)} expected but ${this.current().val} provided')!
 }
 
 fn (mut this Parser) eat(type TokenType) bool {

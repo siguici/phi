@@ -1,4 +1,4 @@
-module sigui
+module phi
 
 import term
 import v.vmod
@@ -13,30 +13,31 @@ pub fn run_repl() bool {
 	mut ran := false
 	term.erase_clear()
 	term.set_cursor_position(x: 0, y: 0)
-	term.set_tab_title('SiguiLang')
-	term.set_terminal_title('SiguiLang')
+	term.set_tab_title('Phi')
+	term.set_terminal_title('Phi')
 	println(term.bold(term.hex(color, center_block(logo))))
 	q := term.bg_red(term.white(term.bold(' \\q ')))
 	exit_i := term.bg_red(term.white(term.bold(' exit() ')))
 	ctrl_c := term.bg_red(term.white(' Ctrl+C '))
 	manifest := vmod.decode(@VMOD_FILE) or { panic(err) }
 	lines := [
-		term.bold(term.hex(color, ' ┌────────────────────────────────────────────┐')),
+		term.bold(term.hex(color,
+			' ┌────────────────────────────────────────────┐')),
 		term.hex(color, ' │') +
-			term.hex(accent, '     Welcome to the ${term.bg_hex(accent, term.white(' Sigui'))}') +
-			term.bg_white(term.hex(accent, 'Lang ')) + term.hex(accent, ' REPL 🐉') +
-			term.hex(color, '     │'),
+			term.hex(color, '      Welcome to the ${term.bg_hex(color, term.white(' Phi (φ) '))}') +
+			term.hex(color, ' REPL 🐉') + term.hex(color, '      │'),
 		term.hex(color, ' │                                            │'),
-		term.hex(color, ' │ The Sigui Programming Language (SiguiLang) │'),
+		term.hex(color, ' │        The Phi Programming Language        │'),
 		term.hex(color, ' │ A modern, high-performance scripting lang  │'),
 		term.hex(color, ' │ with PHP-inspired syntax & TS-like typing. │'),
 		term.hex(color, ' │                                            │'),
 		term.hex(color, ' │ No tags, no semicolons—just code naturally.│'),
 		term.hex(color, ' │                                            │'),
 		term.hex(color, ' │') +
-			term.hex(accent, '   ${manifest.name} v${manifest.version} — experimental build.') +
-			term.hex(color, '   │'),
-		term.hex(color, ' └────────────────────────────────────────────┘'),
+			term.hex(color, '      ${manifest.name} v${manifest.version} — experimental build.') +
+			term.hex(color, '      │'),
+		term.hex(color,
+			' └────────────────────────────────────────────┘'),
 		'',
 		'Type ${q} or ${exit_i} or press ${ctrl_c} to quit.',
 	]

@@ -1,6 +1,6 @@
-module sigui
+module phi
 
-import sigui.core { Position }
+import phi.core { Position }
 
 pub enum TokenType {
 	amp        // &

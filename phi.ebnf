@@ -1,5 +1,5 @@
 (* --------------------------------- *)
-(* SiguiLang Grammar Specification   *)
+(* Phi Grammar Specification         *)
 (* --------------------------------- *)
 
 program        ::= { use_stmt | top_decl } ;

@@ -1,7 +1,7 @@
-module sigui
+module phi
 
 import strings.textscanner
-import sigui.core { Position, scanner_error }
+import phi.core { Position, scanner_error }
 
 @[params]
 pub struct ScannerOptions {
@@ -204,6 +204,7 @@ fn (mut this Scanner) scan_string(delimiter int) !string {
 						this.position())
 				}
 			}
+
 			this.col += 2
 			this.next()
 			this.next()

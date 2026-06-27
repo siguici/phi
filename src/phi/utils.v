@@ -1,4 +1,4 @@
-module sigui
+module phi
 
 import term
 import regex
@@ -6,7 +6,6 @@ import regex
 const logo = $embed_file('logo.txt').to_string()
 
 const color = 59064 // #00E6B8
-const accent = 16744258 // #FF8C42
 
 fn center_line(line string) string {
 	width, _ := term.get_terminal_size()

@@ -1,7 +1,7 @@
 module eval
 
-import sigui.ast
-import sigui.core { runtime_error }
+import phi.ast
+import phi.core { runtime_error }
 
 fn (mut this Eval) decl(d ast.Decl) ! {
 	match d {

@@ -1,11 +1,11 @@
-module sigui
+module phi
 
 import os
 import json
 import net.http
 
 const version = '0.1.0'
-const repo = 'siguici/siguilang'
+const repo = 'siguici/phi'
 
 struct ReleaseAsset {
 	name                 string
@@ -56,10 +56,10 @@ pub fn self_update() {
 			return
 		}
 	}
-	asset_name := 'sigui-${os_name}-${arch}' + if os_name == 'windows' { '.exe' } else { '' }
+	asset_name := 'phi-${os_name}-${arch}' + if os_name == 'windows' { '.exe' } else { '' }
 	*/
 	arch := ''
-	asset_name := 'sigui-${os_name}' + if os_name == 'windows' { '.exe' } else { '' }
+	asset_name := 'phi-${os_name}' + if os_name == 'windows' { '.exe' } else { '' }
 
 	mut download_url := ''
 	for a in release.assets {
@@ -92,14 +92,14 @@ pub fn self_update() {
 }
 
 pub fn self_upgrade() {
-	println('🔄 Full SiguiLang upgrade...')
+	println('🔄 Full Phi upgrade...')
 
 	self_update()
 
-	// TODO: update all SiguiLang modules/dependencies
-	println('⬆️ Updating SiguiLang modules...')
-	// os.system("sigui modules upgrade")
-	// os.system("sigui templates update")
+	// TODO: update all Phi modules/dependencies
+	println('⬆️ Updating Phi modules...')
+	// os.system("phi modules upgrade")
+	// os.system("phi templates update")
 
 	println('✅ Global upgrade terminated.')
 }

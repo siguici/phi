@@ -1,6 +1,6 @@
 module ast
 
-import sigui.core { Span }
+import phi.core { Span }
 
 pub const empty_node = Node(EmptyNode(0))
 

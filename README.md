@@ -1,10 +1,10 @@
-# Phi <a href="https://phici.github.io/phi" title="Phi"><img src="https://github.com/phici/art/blob/HEAD/phi-logo.svg?raw=true" alt="φ" height="24"/></a>
+# Phi <a href="https://siguici.github.io/phi" title="Phi"><img src="https://github.com/siguici/art/blob/HEAD/phi-logo.svg?raw=true" alt="φ" height="24"/></a>
 
 **Phi** is a modern, high-performance programming language
 designed for simplicity, clarity, and expressive power.  
 Built with ❤️ in [Vlang](https://vlang.io).
 
-[![Build Status](https://github.com/phici/philang/workflows/CI/badge.svg)](https://github.com/phici/philang/actions)
+[![Build Status](https://github.com/siguici/phi/workflows/CI/badge.svg)](https://github.com/siguici/phi/actions)
 
 ---
 
@@ -34,8 +34,8 @@ paving the way for native support in environments like TypeScript, PHP, and Vlan
 > ⚠️ **Requires [Vlang](https://vlang.io)**
 
 ```bash
-git clone https://github.com/phici/philang
-cd philang
+git clone https://github.com/siguici/phi
+cd phi
 v src -o phi
 ./phi examples
 ````
@@ -132,4 +132,4 @@ We welcome contributions and ideas!
 
 ## 📜 License
 
-[MIT](./LICENSE.md) © [Sigui Kessé Emmanuel](https://github.com/phici)
+[MIT](./LICENSE.md) © [Sigui Kessé Emmanuel](https://github.com/siguici)

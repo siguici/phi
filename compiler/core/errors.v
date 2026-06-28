@@ -7,7 +7,7 @@ pub:
 	span Span
 }
 
-struct PhiError {
+struct CompilerError {
 	Error
 	type string @[required]
 	msg  string
@@ -15,8 +15,8 @@ struct PhiError {
 	pos  Position
 }
 
-fn phi_error(type string, msg string, opts ErrorOptions) PhiError {
-	return PhiError{
+fn compiler_error(type string, msg string, opts ErrorOptions) CompilerError {
+	return CompilerError{
 		type: type
 		msg:  msg
 		pos:  opts.pos
@@ -24,20 +24,20 @@ fn phi_error(type string, msg string, opts ErrorOptions) PhiError {
 	}
 }
 
-pub fn scanner_error(msg string, pos Position) PhiError {
-	return phi_error('scanner', msg, pos: pos)
+pub fn scanner_error(msg string, pos Position) CompilerError {
+	return compiler_error('scanner', msg, pos: pos)
 }
 
-pub fn parser_error(msg string, span Span) PhiError {
-	return phi_error('parser', msg, span: span)
+pub fn parser_error(msg string, span Span) CompilerError {
+	return compiler_error('parser', msg, span: span)
 }
 
-pub fn runtime_error(msg string, opts ErrorOptions) PhiError {
-	return phi_error('runtime', msg, opts)
+pub fn runtime_error(msg string, opts ErrorOptions) CompilerError {
+	return compiler_error('runtime', msg, opts)
 }
 
-pub fn (e PhiError) msg() string {
-	mut msg := 'Phi ${e.type} error: ${e.msg}'
+pub fn (e CompilerError) msg() string {
+	mut msg := 'Compiler ${e.type} error: ${e.msg}'
 	mut span := e.span
 
 	if span.is_empty() {

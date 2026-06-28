@@ -1,4 +1,4 @@
-module phi
+module compiler
 
 import term
 import v.vmod

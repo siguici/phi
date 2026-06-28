@@ -1,6 +1,6 @@
 module ast
 
-import phi.core { Span }
+import compiler.core { Span }
 
 pub const empty_node = Node(EmptyNode(0))
 

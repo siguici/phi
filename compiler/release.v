@@ -1,4 +1,4 @@
-module phi
+module compiler
 
 import os
 import json

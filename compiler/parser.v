@@ -1,7 +1,7 @@
-module phi
+module compiler
 
-import phi.core { Position, Span, parser_error }
-import phi.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
+import compiler.core { Position, Span, parser_error }
+import compiler.ast { ArrayDecl, AssignExpr, BinaryExpr, Block, Decl, Expr, ForStmt, IfStmt, ListDecl, LiteralExpr, Node, PrintStmt, ScanExpr, Stmt, TypeDecl, UnaryExpr, VarDecl }
 
 pub fn parse(tokens []Token) ![]Node {
 	mut p := new_parser(tokens)

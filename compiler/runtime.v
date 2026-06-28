@@ -1,9 +1,9 @@
-module phi
+module compiler
 
 import os
 import sync
-import phi.ast { Node }
-import phi.eval
+import compiler.ast { Node }
+import compiler.eval
 
 @[params]
 pub struct RuntimeOptions {

@@ -2,8 +2,8 @@ module eval
 
 import math
 import os
-import phi.ast
-import phi.core { Span, runtime_error }
+import compiler.ast
+import compiler.core { Span, runtime_error }
 
 fn (mut this Eval) eval_expr(e ast.Expr) !Value {
 	return match e {

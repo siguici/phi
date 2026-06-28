@@ -1,7 +1,7 @@
-module phi
+module compiler
 
 import strings.textscanner
-import phi.core { Position, scanner_error }
+import compiler.core { Position, scanner_error }
 
 @[params]
 pub struct ScannerOptions {

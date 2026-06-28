@@ -8,7 +8,8 @@ on:
       - 'v*'
     paths:
       - .github/workflows/*
-      - src/**
+      - 'v.mod'
+      - '**/*.v'
       - '*.md'
 
 permissions:
@@ -38,7 +39,7 @@ jobs:
         if: runner.os != 'Windows'
         run: |
           mkdir -p bin
-          OUTPUT="bin/sg_${RUNNER_OS}_${{ matrix.arch }}"
+          OUTPUT="bin/phi_${RUNNER_OS}_${{ matrix.arch }}"
           echo "Building $OUTPUT..."
           v -prod -arch ${{ matrix.arch }} . -o $OUTPUT
           zip -j "${OUTPUT}.zip" "$OUTPUT"
@@ -49,7 +50,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path bin
-          $output = "bin\sg_${env:RUNNER_OS}_${{ matrix.arch }}.exe"
+          $output = "bin\phi_${env:RUNNER_OS}_${{ matrix.arch }}.exe"
           Write-Host "Building $output..."
           v -prod -arch ${{ matrix.arch }} . -o $output
           Compress-Archive -Path $output -DestinationPath "$output.zip"

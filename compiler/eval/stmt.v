@@ -1,7 +1,7 @@
 module eval
 
 import os
-import phi.ast
+import compiler.ast
 
 fn (mut this Eval) eval_stmt(s ast.Stmt) ! {
 	match s {

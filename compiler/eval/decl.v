@@ -1,7 +1,7 @@
 module eval
 
-import phi.ast
-import phi.core { runtime_error }
+import compiler.ast
+import compiler.core { runtime_error }
 
 fn (mut this Eval) decl(d ast.Decl) ! {
 	match d {

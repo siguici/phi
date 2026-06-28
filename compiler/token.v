@@ -1,6 +1,6 @@
-module phi
+module compiler
 
-import phi.core { Position }
+import compiler.core { Position }
 
 pub enum TokenType {
 	amp        // &

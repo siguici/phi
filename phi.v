@@ -3,7 +3,7 @@ module main
 import cli
 import os
 import v.vmod
-import phi
+import compiler
 
 const manifest = vmod.decode(@VMOD_FILE) or { panic(err) }
 
@@ -48,7 +48,7 @@ pub fn Program.new() &Program {
 						eprintln('❌ Unknown command : ${args[0]}')
 						exit(1)
 					}
-					phi.do_release()
+					compiler.do_release()
 				}
 			},
 			cli.Command{
@@ -71,36 +71,36 @@ pub fn Program.new() &Program {
 					}
 					if version := cmd.flags.get_string('version') {
 						if version != '' {
-							phi.self_upgrade_to(version)
+							compiler.self_upgrade_to(version)
 							return
 						}
 					}
-					phi.self_upgrade()
+					compiler.self_upgrade()
 				}
 			},
 		]
 		execute:     fn (cmd cli.Command) ! {
 			if code := cmd.flags.get_string('eval') {
 				if code != '' {
-					phi.run_code(code, file: os.args[0], dir: os.getwd()) or { panic(err) }
+					compiler.run_code(code, file: os.args[0], dir: os.getwd()) or { panic(err) }
 					return
 				}
 			}
 
-			if cmd.flags.get_bool('repl') or { false } && phi.run_repl() {
+			if cmd.flags.get_bool('repl') or { false } && compiler.run_repl() {
 				return
 			}
 
 			if cmd.args.len > 0 {
 				if cmd.flags.get_bool('conc') or { false } {
-					phi.run_many_concurrently(cmd.args, dir: os.getwd()) or { panic(err) }
+					compiler.run_many_concurrently(cmd.args, dir: os.getwd()) or { panic(err) }
 				} else {
-					phi.run_many(cmd.args, dir: os.getwd()) or { panic(err) }
+					compiler.run_many(cmd.args, dir: os.getwd()) or { panic(err) }
 				}
 				return
 			}
 
-			if !phi.run_repl() {
+			if !compiler.run_repl() {
 				h := cmd.help_message()
 				println(h)
 				exit(0)

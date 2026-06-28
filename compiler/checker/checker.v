@@ -1,6 +1,6 @@
 module checker
 
-import phi.ast
+import compiler.ast
 
 pub fn check(node ast.Node) bool {
 	return true

@@ -1,4 +1,4 @@
-# Phi <a href="https://siguici.github.io/phi" title="Phi"><img src="https://github.com/siguici/art/blob/HEAD/phi-logo.svg?raw=true" alt="φ" height="24"/></a>
+# Phi <a href="https://siguici.github.io/phi" title="Phi"><img src="https://github.com/siguici/art/blob/HEAD/images/phi-logo.svg?raw=true" alt="φ" height="24"/></a>
 
 **Phi** is a modern, high-performance programming language
 designed for simplicity, clarity, and expressive power.  
